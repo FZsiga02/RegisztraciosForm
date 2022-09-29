@@ -11,7 +11,15 @@ function submit(){
             break
         }
     }
-}
+
+    if(document.getElementById('password').value.length < 8){
+        alert('A jelszó legalább 8 karakter hosszú kell hogy legyen')
+    }
+   
+    if(document.getElementById('password').value.search(^(?=.*[a-zA-Z])(?=.*[0-9])) === -1){
+        alert('A jelszónak legalább 1 betűt és 1 számot tartalmaznia kell')
+    }
+    
 
 function init(){
     document.getElementById('submit').addEventListener('click', submit)
